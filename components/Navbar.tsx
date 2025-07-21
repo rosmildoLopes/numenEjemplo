@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,10 +11,7 @@ export default function NavBar() {
   return (
     <nav className="bg-background py-6 shadow-sm">
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <h1 className="text-3xl font-black text-texto">
-          <span className="text-main">Tu</span>Agencia
-        </h1>
-
+        <Image className="w-32 p-0" src='/logo_Negro.png' width={300} height={100} priority alt="logo numen publicidad color negro"/>
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8">
           <Link href="/" className="text-gray-500 hover:text-main font-medium">

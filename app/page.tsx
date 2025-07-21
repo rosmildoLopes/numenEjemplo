@@ -6,6 +6,7 @@ import Servicios from "@/components/Servicios";
 import Hero from "@/components/HeroDifuminado";
 import Resultados from "@/components/Resultados";
 import About from "@/components/About";
+import FAQSection from "@/components/FAQSection";
 
 export default function HomePage() {
 
@@ -17,6 +18,7 @@ export default function HomePage() {
         <Servicios/>
         <About/>
         <ProcesoSection />
+        <FAQSection />
 
       </main>
 
