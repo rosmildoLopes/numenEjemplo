@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  BarChart3, 
-  Megaphone, 
-  Search, 
-  Smartphone, 
-  PenTool, 
+import {
+  BarChart3,
+  Megaphone,
+  Search,
+  Smartphone,
+  PenTool,
   Globe,
-  ArrowRight 
+  ArrowRight
 } from "lucide-react";
+import Link from "next/link";
 
 const Servicios = () => {
   const services = [
@@ -16,37 +17,37 @@ const Servicios = () => {
       icon: BarChart3,
       title: "Marketing Digital",
       description: "Estrategias de marketing digital medibles y orientadas a resultados para maximizar tu ROI.",
-      features: ["Analytics avanzado", "Segmentación precisa", "Optimización continua"]
-    },
+      features: ["Analytics avanzado", "Segmentación precisa", "Optimización continua"], link: "/marketing"
+    }, // <-- A comma was added here
     {
       icon: Megaphone,
       title: "Publicidad Digital",
       description: "Campañas publicitarias en Google Ads, Facebook, Instagram y otras plataformas clave.",
-      features: ["Google Ads", "Meta Ads", "LinkedIn Ads"]
+      features: ["Google Ads", "Meta Ads", "LinkedIn Ads"], link: "/publicidad"
     },
     {
       icon: Search,
       title: "SEO & SEM",
       description: "Posicionamiento orgánico y de pago para aumentar tu visibilidad en buscadores.",
-      features: ["SEO técnico", "Contenido optimizado", "Link building"]
+      features: ["SEO técnico", "Contenido optimizado", "Link building"], link: "/seo"
     },
     {
       icon: Smartphone,
-     title: "Numen Bot",
+      title: "Numen Bot",
       description: "Solución de vanguardia con IA para optimizar la interacción y eficiencia con tus clientes.",
-      features: ["Respuestas instantáneas 24/7", "Eficiencia operativa", "Experiencia del cliente mejorada"]
+      features: ["Respuestas instantáneas 24/7", "Eficiencia operativa", "Experiencia del cliente mejorada"], link: "/numen-bot"
     },
     {
       icon: PenTool,
       title: "Diseño Creativo",
       description: "Diseño gráfico y creativo que comunica tu mensaje de forma efectiva y memorable.",
-      features: ["Branding", "Diseño web", "Creatividades publicitarias"]
+      features: ["Branding", "Diseño web", "Creatividades publicitarias"], link: "/diseño"
     },
     {
       icon: Globe,
       title: "Desarrollo Web",
       description: "Sitios web optimizados para conversión y experiencia de usuario excepcional.",
-      features: ["Responsive design", "UX/UI optimizado", "Performance"]
+      features: ["Responsive design", "UX/UI optimizado", "Performance"], link: "/desarrollo"
     }
   ];
 
@@ -60,26 +61,26 @@ const Servicios = () => {
           </div>
           <h2 className="text-3xl md:text-6xl font-bold text-foreground mb-6">
             Soluciones integrales de
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-main to-verde p-3">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-main to-accent pb-5">
               marketing digital
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Desarrollamos estrategias personalizadas que combinan creatividad, 
+            Desarrollamos estrategias personalizadas que combinan creatividad,
             tecnología y análisis de datos para impulsar el crecimiento de tu negocio.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16 w-11/12 mx-auto">
           {services.map((service, index) => (
-            <Card 
-              key={service.title} 
-              className="group hover-lift border-0 shadow-md hover:shadow-lg bg-white/80 backdrop-blur-sm"
+            <Card
+              key={service.title}
+              className="group hover-lift border-0 shadow-md hover:shadow-md bg-white backdrop-blur-sm hover:shadow-accent transition duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-main to-verde rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-main to-accent rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-7 h-7 text-white" />
                 </div>
                 <CardTitle className="text-xl font-bold text-foreground group-hover:text-main transition-colors">
@@ -98,11 +99,13 @@ const Servicios = () => {
                     </li>
                   ))}
                 </ul>
-                <Button 
-                  variant="ghost" 
-                  className="w-full group-hover:bg-gradient-to-r group-hover:from-main group-hover:to-verde  group-hover:text-white transition duration-100"
+                <Button
+                  variant="ghost"
+                  className="w-full group-hover:bg-gradient-to-r group-hover:from-main group-hover:to-accent  group-hover:text-white transition duration-100"
                 >
-                  Más información
+                  <Link href={service.link} target="_blank">
+                    Más información
+                  </Link>
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </CardContent>
@@ -111,14 +114,14 @@ const Servicios = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-main to-verde rounded-2xl p-8 md:p-12 text-white">
+        <div className="w-11/12 mx-auto text-center bg-gradient-to-r from-main to-accent rounded-2xl p-8 md:p-12 text-white hover:bg-gradient-to-r hover:from-accent hover:to-main transition duration-300">
           <h3 className="text-2xl md:text-4xl font-bold mb-4">
             ¿Listo para transformar tu negocio?
           </h3>
           <p className="text-xl mb-8 text-white/90">
             Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos digitales.
           </p>
-          <Button variant="hero" size="xl" className="bg-white text-main hover:text-verde hover:shadow-2xl hover:bg-white font-bold ">
+          <Button variant="hero" size="xl" className="bg-white text-main hover:text-accent hover:shadow-2xl hover:bg-white font-bold ">
             Solicitar Consulta Gratuita
             <ArrowRight className="ml-2 h-7 w-7" />
           </Button>

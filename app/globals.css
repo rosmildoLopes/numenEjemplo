@@ -3,7 +3,7 @@
 :root {
   --background: #893a3a;
   --foreground: #171717;
-    --color-gradient: linear-gradient(to right, var(--color-main), var(--color-verde));
+    --color-gradient: linear-gradient(to right, var(--color-main), var(--color-accent));
 
 }
 
@@ -15,14 +15,14 @@
    --color-main: #4080C4;
   --color-blue: #1a81c4;
   --color-gris: #ededed;
-  --color-verde: #28bfc9;
+  --color-accent: #28bfc9;
   --color-gris-oscuro: #6b6b6b;
   --color-texto: #1e2939;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f3e7e7;
+    --background: #FFFFFF;
     --foreground: #2d3748;
      --card: 0 0% 100%;
    

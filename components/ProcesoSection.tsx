@@ -41,7 +41,7 @@ export default function ProcesoSection() {
           </div>
           <h2 className="text-3xl md:text-6xl font-bold text-foreground mb-6">
             Nuestro{" "}
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-main to-verde">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-main to-accent">
               Proceso de Éxito
             </span>
           </h2>
@@ -57,7 +57,7 @@ export default function ProcesoSection() {
               key={i}
               className="group hover-lift border-0 shadow-md hover:shadow-lg bg-card text-card-foreground backdrop-blur-sm p-6 rounded-2xl transition-all duration-300"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-main to-verde rounded-xl flex items-center justify-center font-bold text-lg text-white mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-main to-accent rounded-xl flex items-center justify-center font-bold text-lg text-white mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 {`0${i + 1}`}
               </div>
               <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-main transition-colors">

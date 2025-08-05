@@ -2,100 +2,128 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Button } from "./ui/button";
 import Image from "next/image";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
+import { motion, AnimatePresence } from "framer-motion"; // Importamos Framer Motion para animaciones
+
+// Definimos la interfaz para los elementos del menú
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "FAQ", href: "/#faq" },
+];
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  return (
-    <nav className="bg-background py-6 shadow-sm">
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <Image className="w-32 p-0" src='/logo_Negro.png' width={300} height={100} priority alt="logo numen publicidad color negro"/>
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-8">
-          <Link href="/" className="text-gray-500 hover:text-main font-medium">
-            Inicio
-          </Link>
-          <Link
-            href="#servicios-detalle"
-            className="text-gray-500 hover:text-main font-medium"
-          >
-            Servicios
-          </Link>
-          <Link href="#" className="text-gray-500 hover:text-main font-medium">
-            Academia
-          </Link>
-        </nav>
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
-        <Link href="#contacto" className="">
-          <Button variant='gradient' size='lg'>¡Impulsa Tu Negocio!</Button>
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  return (
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm transition-colors duration-300 shadow-sm">
+      <div className="container mx-auto px-6 flex justify-between items-center py-4">
+        {/* Logo */}
+        <Link href="/">
+          <Image
+            className="w-32 h-auto p-0"
+            src="/logo_Negro.png"
+            width={300}
+            height={100}
+            priority
+            alt="logo numen publicidad color negro"
+          />
         </Link>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-main focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-8">
+          <nav className="flex space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-muted-foreground hover:text-main font-medium transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <Link href="/#contacto" passHref>
+            <Button variant="gradient" size="lg" className="shadow-lg hover:shadow-xl transition-shadow">
+              ¡Impulsa Tu Negocio!
+            </Button>
+          </Link>
+        </div>
+
+        {/* Mobile Toggle & CTA */}
+        <div className="md:hidden flex items-center gap-4">
+          <Link href="/#contacto" passHref>
+            <Button variant="gradient" size="sm" className="px-3 py-1.5 text-sm shadow-md">
+              <span className="sr-only">Contacto</span>
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </Link>
+          <button
+            className="text-foreground focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors"
+            onClick={toggleMenu}
           >
             {menuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <X className="h-6 w-6" aria-label="Cerrar menú" />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <Menu className="h-6 w-6" aria-label="Abrir menú" />
             )}
-          </svg>
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <nav className="md:hidden px-6 pt-4 space-y-4">
-          <Link
-            href="#servicios-detalle"
-            className="block text-gray-500 hover:text-main font-medium"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden px-6 pb-4 pt-2 border-t border-gray-200"
           >
-            Servicios
-          </Link>
-          <Link
-            href="#proceso"
-            className="block text-gray-500 hover:text-main font-medium"
-          >
-            Proceso
-          </Link>
-          <Link
-            href="#testimonios"
-            className="block text-gray-500 hover:text-main font-medium"
-          >
-            Testimonios
-          </Link>
-          <Link
-            href="#contacto"
-            className="block text-gray-500 hover:text-main font-medium"
-          >
-            Contacto
-          </Link>
-          <Link
-            href="#contacto"
-            className="block bg-main hover:bg-teal-700 text-white px-4 py-2 rounded-full font-bold shadow-md text-center"
-          >
-            ¡Impulsa Tu Negocio!
-          </Link>
-        </nav>
-      )}
+            <ul className="space-y-4">
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="block text-lg text-foreground hover:text-main font-medium transition-colors p-2 -ml-2 rounded-md"
+                    onClick={closeMenu}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/#contacto" passHref>
+                  <Button
+                    variant="gradient"
+                    className="w-full mt-2"
+                    onClick={closeMenu}
+                  >
+                    ¡Impulsa Tu Negocio!
+                  </Button>
+                </Link>
+              </li>
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
