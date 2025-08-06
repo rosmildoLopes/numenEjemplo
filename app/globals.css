@@ -21,9 +21,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff; /* <- Valor igual al tema claro */
-    --foreground: #171717; /* <- Valor igual al tema claro */
+    --background: #ffffff;
+    --foreground: #171717;
     --card: 0 0% 100%;
+  }
+
+  /* This rule is crucial for overriding forced dark mode. */
+  html {
+    filter: invert(0) hue-rotate(0deg);
   }
 }
 
