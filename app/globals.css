@@ -3,16 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-    --color-gradient: linear-gradient(to right, var(--color-main), var(--color-accent));
-
+  --color-gradient: linear-gradient(to right, var(--color-main), var(--color-accent));
 }
 
-@theme  {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-   --color-main: #4080C4;
+  --color-main: #4080C4;
   --color-blue: #1a81c4;
   --color-gris: #ededed;
   --color-accent: #28bfc9;
@@ -20,12 +19,18 @@
   --color-texto: #1e2939;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff; /* <- Valor igual al tema claro */
+    --foreground: #171717; /* <- Valor igual al tema claro */
+    --card: 0 0% 100%;
+  }
+}
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
 .card {
