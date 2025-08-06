@@ -29,7 +29,7 @@ export default function ProcesoSection() {
     // Se cambia el fondo para usar un gradiente similar al de Servicios o un color de fondo de tu tema
     <section
       id="proceso"
-      className="py-20 bg-gradient-to-b from-secondary/10 to-background/5"
+      className="py-2 bg-white"
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         {" "}

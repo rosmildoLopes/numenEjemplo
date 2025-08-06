@@ -11,7 +11,7 @@ import  {Stats}  from "@/components/Stats";
 export default function HomePage() {
   return (
     <div className="font-sans text-texto ">
-      <main className="flex flex-col gap-44 ">
+      <main className="flex flex-col gap-32 ">
         <Hero />
         <Resultados />
         <Servicios />

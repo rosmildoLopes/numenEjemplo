@@ -3,8 +3,8 @@ import { Target, TrendingUp } from "lucide-react";
 
 export function Mission() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 w-11/12 mx-auto">
-      <Card className="hover-lift border-0 shadow-lg bg-gradient-to-br from-main to-accent text-white">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-2 w-11/12 mx-auto">
+      <Card className="hover-lift border-0 shadow-lg bg-gradient-to-br from-main to-accent text-white hover:scale-105 transition duration-300 hover:shadow-md hover:shadow-black/80">
         <CardContent className="p-8">
           <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
             <Target className="w-6 h-6 text-white" />
@@ -18,7 +18,7 @@ export function Mission() {
         </CardContent>
       </Card>
 
-      <Card className="hover-lift border-0 shadow-lg bg-white/90 backdrop-blur-sm">
+      <Card className="hover-lift border-0 shadow-lg bg-white/90 backdrop-blur-sm hover:scale-105 transition duration-300 hover:shadow-md hover:shadow-blue">
         <CardContent className="p-8">
           <div className="w-12 h-12 bg-gradient-to-br from-main to-accent rounded-xl flex items-center justify-center mb-6">
             <TrendingUp className="w-6 h-6 text-white" />

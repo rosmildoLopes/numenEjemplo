@@ -2,13 +2,8 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2d3748;
   --color-gradient: linear-gradient(to right, var(--color-main), var(--color-accent));
-
-  --card-bg: #ffffff; /* Un color de fondo para tarjetas */
-  --text-muted: #6b6b6b; /* Color para texto secundario */
-  --main-color: #4080C4; /* Tu color principal */
-  --accent-color: #28bfc9; /* Tu color de acento */
 }
 
 @theme {
@@ -25,32 +20,12 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  html, body {
-    background-color: var(--background) !important;
-    color: var(--foreground) !important;
+  :root {
+    --background: #ffffff; /* <- Valor igual al tema claro */
+    --foreground: #2d3748; /* <- Valor igual al tema claro */
+    --card: 0 0% 100%;
   }
   
-  /* Sobrescribe los colores de otros elementos importantes */
-  h1, h2, h3, h4, h5, h6, p, span, a, li, button {
-    color: var(--foreground) !important;
-  }
-  
-  /* Asegúrate de que las tarjetas y otros contenedores también sean claros */
-  .card, .bg-white, .bg-gray-100, .bg-background {
-    background-color: var(--card-bg) !important;
-    color: var(--foreground) !important;
-  }
-  
-  /* Sobrescribe los colores de fondo de las secciones */
-  .bg-gradient-to-b {
-    background: linear-gradient(to bottom, var(--background), var(--background)) !important;
-    /* Si el gradiente usa colores personalizados, también debes forzarlos */
-  }
-
-  /* Si hay elementos que tienen un filtro de inversión, desactívalo */
-  img, svg {
-    filter: invert(0) hue-rotate(0deg) !important;
-  }
 }
 
 body {

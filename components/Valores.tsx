@@ -32,7 +32,7 @@ const values: Value[] = [
 
 export function Valores() {
   return (
-    <div className="mb-20">
+    <div className="mb-2">
       <h2 className="text-3xl md:text-6xl text-center font-bold text-foreground mb-6">
             Nuestros{" "}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-main to-accent">
@@ -43,7 +43,7 @@ export function Valores() {
         {values.map((value, index) => (
           <Card
             key={value.title}
-            className="text-center hover-lift border-0 shadow-md bg-white/80 backdrop-blur-sm"
+            className="text-center hover-lift border-0 shadow-md bg-white/80 backdrop-blur-sm hover:scale-105 transition duration-300 hover:shadow-md hover:shadow-blue"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <CardContent className="p-6">

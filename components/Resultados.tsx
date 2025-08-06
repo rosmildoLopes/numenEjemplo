@@ -32,7 +32,7 @@ const Resultados = () => {
 
 
   return (
-    <section id="resultados" className="py-20 bg-background">
+    <section id="resultados" className="py-2 bg-white">
       <div className="mx-auto px-4 sm:px-6 lg:px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -52,7 +52,7 @@ const Resultados = () => {
         </div>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 w-11/12 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-11/12 mx-auto">
           {metrics.map((metric, index) => (
             <Card 
               key={metric.label} 

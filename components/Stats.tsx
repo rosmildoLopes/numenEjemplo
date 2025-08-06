@@ -7,7 +7,7 @@ export function Stats() {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-main to-accent  p-8 md:p-12 text-white">
+    <div className="bg-gradient-to-r from-main to-accent  p-8 md:p-20 text-white">
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-6xl font-bold text-foreground mb-6">
             Numeros{" "}

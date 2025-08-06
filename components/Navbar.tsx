@@ -32,7 +32,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm transition-colors duration-300 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm transition-colors duration-300 shadow-sm">
       <div className="container mx-auto px-6 flex justify-between items-center py-4">
         {/* Logo */}
         <Link href="/">

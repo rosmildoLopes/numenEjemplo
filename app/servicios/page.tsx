@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { ArrowRight } from "lucide-react";
 import Link from 'next/link';
 
-import Servicios  from "@/components/Servicios"; // Asume que exportas el componente como `Servicios`
+import Servicios  from "@/components/Servicios"; 
 import { Button } from '@/components/ui/button';
 
 export default function ServiciosPage() {

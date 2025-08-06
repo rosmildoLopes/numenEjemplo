@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import { ArrowRight, Lightbulb, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from 'next/link';
 
 // Importa los componentes que ya hemos creado
 import { Team } from "@/components/Team";
-import  {Stats}  from "@/components/Stats";
 import { Button } from '@/components/ui/button';
 import { Mission } from '@/components/Mission';
 import { Valores } from '@/components/Valores';
@@ -35,33 +34,24 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Sección de Misión y Visión (reutiliza el componente) */}
         <section className="py-20">
           <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
             <Mission />
           </div>
         </section>
 
-        {/* Sección de valores (reutiliza el componente) */}
         <section className="py-20 bg-gray-100/50">
           <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
             <Valores />
           </div>
         </section>
 
-        {/* Sección del equipo (reutiliza el componente) */}
         <section id="equipo" className="py-20">
           <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
             <Team />
           </div>
         </section>
 
-        {/* Sección de estadísticas (reutiliza el componente) */}
-        <section className="py-20">
-          <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
-            <Stats />
-          </div>
-        </section>
 
       </main>
     </>

@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   BarChart3,
   Megaphone,
@@ -7,7 +13,7 @@ import {
   Smartphone,
   PenTool,
   Globe,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -16,43 +22,66 @@ const Servicios = () => {
     {
       icon: BarChart3,
       title: "Marketing Digital",
-      description: "Estrategias de marketing digital medibles y orientadas a resultados para maximizar tu ROI.",
-      features: ["Analytics avanzado", "Segmentación precisa", "Optimización continua"], link: "/marketing"
+      description:
+        "Estrategias de marketing digital medibles y orientadas a resultados para maximizar tu ROI.",
+      features: [
+        "Analytics avanzado",
+        "Segmentación precisa",
+        "Optimización continua",
+      ],
+      link: "/marketing",
     }, // <-- A comma was added here
     {
       icon: Megaphone,
       title: "Publicidad Digital",
-      description: "Campañas publicitarias en Google Ads, Facebook, Instagram y otras plataformas clave.",
-      features: ["Google Ads", "Meta Ads", "LinkedIn Ads"], link: "/publicidad"
+      description:
+        "Campañas publicitarias en Google Ads, Facebook, Instagram y otras plataformas clave.",
+      features: ["Google Ads", "Meta Ads", "LinkedIn Ads"],
+      link: "/publicidad",
     },
     {
       icon: Search,
       title: "SEO & SEM",
-      description: "Posicionamiento orgánico y de pago para aumentar tu visibilidad en buscadores.",
-      features: ["SEO técnico", "Contenido optimizado", "Link building"], link: "/seo"
+      description:
+        "Posicionamiento orgánico y de pago para aumentar tu visibilidad en buscadores.",
+      features: ["SEO técnico", "Contenido optimizado", "Link building"],
+      link: "/seo",
     },
     {
       icon: Smartphone,
       title: "Numen Bot",
-      description: "Solución de vanguardia con IA para optimizar la interacción y eficiencia con tus clientes.",
-      features: ["Respuestas instantáneas 24/7", "Eficiencia operativa", "Experiencia del cliente mejorada"], link: "/numen-bot"
+      description:
+        "Solución de vanguardia con IA para optimizar la interacción y eficiencia con tus clientes.",
+      features: [
+        "Respuestas instantáneas 24/7",
+        "Eficiencia operativa",
+        "Experiencia del cliente mejorada",
+      ],
+      link: "/numen-bot",
     },
     {
       icon: PenTool,
       title: "Diseño Creativo",
-      description: "Diseño gráfico y creativo que comunica tu mensaje de forma efectiva y memorable.",
-      features: ["Branding", "Diseño web", "Creatividades publicitarias"], link: "/diseño"
+      description:
+        "Diseño gráfico y creativo que comunica tu mensaje de forma efectiva y memorable.",
+      features: ["Branding", "Diseño web", "Creatividades publicitarias"],
+      link: "/diseño",
     },
     {
       icon: Globe,
       title: "Desarrollo Web",
-      description: "Sitios web optimizados para conversión y experiencia de usuario excepcional.",
-      features: ["Responsive design", "UX/UI optimizado", "Performance"], link: "/desarrollo"
-    }
+      description:
+        "Sitios web optimizados para conversión y experiencia de usuario excepcional.",
+      features: ["Responsive design", "UX/UI optimizado", "Performance"],
+      link: "/desarrollo",
+    },
   ];
 
   return (
-    <section id="servicios" className="py-20 bg-gradient-to-b from-gray-100/50 to-gray-100/80">
+    <section
+      id="servicios"
+      className="py-12 bg-gradient-to-r from-gray-100 to-mute"
+    >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -67,7 +96,8 @@ const Servicios = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Desarrollamos estrategias personalizadas que combinan creatividad,
-            tecnología y análisis de datos para impulsar el crecimiento de tu negocio.
+            tecnología y análisis de datos para impulsar el crecimiento de tu
+            negocio.
           </p>
         </div>
 
@@ -93,7 +123,10 @@ const Servicios = () => {
               <CardContent>
                 <ul className="space-y-2 mb-4">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-muted-foreground">
+                    <li
+                      key={feature}
+                      className="flex items-center text-sm text-muted-foreground"
+                    >
                       <div className="w-1.5 h-1.5 bg-main rounded-full mr-2"></div>
                       {feature}
                     </li>
@@ -114,14 +147,19 @@ const Servicios = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="w-11/12 mx-auto text-center bg-gradient-to-r from-main to-accent rounded-2xl p-8 md:p-12 text-white hover:bg-gradient-to-r hover:from-accent hover:to-main transition duration-300">
+        <div className="w-11/12 mx-auto text-center bg-gradient-to-r md:mt-56 from-main to-accent rounded-2xl p-8 md:p-12 text-white hover:bg-gradient-to-r hover:from-accent hover:to-main transition duration-300">
           <h3 className="text-2xl md:text-4xl font-bold mb-4">
             ¿Listo para transformar tu negocio?
           </h3>
           <p className="text-xl mb-8 text-white/90">
-            Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos digitales.
+            Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos
+            digitales.
           </p>
-          <Button variant="hero" size="xl" className="bg-white text-main hover:text-accent hover:shadow-2xl hover:bg-white font-bold ">
+          <Button
+            variant="hero"
+            size="xl"
+            className="bg-white text-main hover:text-accent hover:shadow-2xl hover:bg-white font-bold "
+          >
             Solicitar Consulta Gratuita
             <ArrowRight className="ml-2 h-7 w-7" />
           </Button>

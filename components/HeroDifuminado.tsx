@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-screen bg-background overflow-hidden">
+    <div className="relative w-full h-screen bg-white overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-right" 
         style={{
