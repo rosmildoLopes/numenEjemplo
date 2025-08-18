@@ -7,7 +7,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-right" 
         style={{
-          backgroundImage: `url('/hero3.jpg')`,
+          backgroundImage: `url('/robotic-hand.jpg')`,
           maskImage: 'linear-gradient(to right, transparent 0%, transparent 30%, black 100%)',
           WebkitMaskImage: 'linear-gradient(to right, transparent 0%, transparent 30%, black 100%)',
 
